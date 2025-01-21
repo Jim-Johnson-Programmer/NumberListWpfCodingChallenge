@@ -12,6 +12,8 @@ This WPF application allows users to input a comma-delimited list of integers an
   - Output is displayed in red for negative values and green for positive values.
 
 ## UI Overview
+- **WireFrame**: The wireframe specification.
+ ![](GUI_Wireframe.png "GUI Wireframe")
 - **User Input**: A labeled input textbox for entering a list of integers.
 - **Buttons**:
   - "Find Largest"
@@ -30,7 +32,7 @@ This WPF application allows users to input a comma-delimited list of integers an
    - **Find Largest**: Displays the largest number in the list.
    - **Find Odd Positioned Sum**: Displays the sum of numbers at odd positions.
    - **Find Even Positioned Sum**: Displays the sum of numbers at even positions.
-3. Observe the result color and message.
+3. Results that are ***<font color="green">above zero will have green text</font>*** and ***<font color="red">below zero will have red text.</font>***
 
 ## Input Validation
 - Accepts: `3,-1,7,8,-5`
@@ -38,6 +40,7 @@ This WPF application allows users to input a comma-delimited list of integers an
   - `3, abc, 5` (non-numeric input)
   - `3,4.5,7` (decimal values)
   - `3,,7` (extra commas)
+  - `3,7,` (trailing comma)
 
 ## Technologies Used
 - **Framework**: .NET WPF
