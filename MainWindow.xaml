@@ -1,0 +1,49 @@
+﻿<Window x:Class="NumberListWpfCodingChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumberListWpfCodingChallenge"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="800">
+    <Grid Margin="10">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="10" Background="LightGray" BorderBrush="Gray" BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="User Input:" Grid.Column="0" VerticalAlignment="Top" Margin="3,8,8,0" />
+        <TextBox x:Name="InputNumbersTextBox" Grid.Row="0" Grid.Column="1" Height="30" Margin="0,0,0,10" VerticalAlignment="Top"
+              Text="{Binding InputNumbers, UpdateSourceTrigger=PropertyChanged}" />
+
+        <UniformGrid Grid.Row="1" Grid.ColumnSpan="2" Columns="3" Margin="0,10,0,10">
+            <Button x:Name="FindLargestButton" Height="30" Content="Find Largest" Command="{Binding FindLargestCommand}" IsEnabled="{Binding IsInputValid}" Margin="5,0"/>
+            <Button x:Name="FindOddSumButton" Height="30" Content="Find Odd Positioned Sum" Command="{Binding FindOddSumCommand}" IsEnabled="{Binding IsInputValid}" Margin="5,0"/>
+            <Button x:Name="FindEvenSumButton" Height="30" Content="Find Even Positioned Sum" Command="{Binding FindEvenSumCommand}" IsEnabled="{Binding IsInputValid}" Margin="5,0"/>
+        </UniformGrid>
+
+        <TextBlock Text="Result:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,10,10,0" />
+        <TextBlock x:Name="ResultTextBlock" Grid.Row="2" Grid.Column="1" Margin="0,10,0,0" FontSize="16" FontWeight="Bold" TextWrapping="Wrap"
+                Text="{Binding LargestNumberMessage}" Foreground="{Binding ResultColor}" />
+    </Grid>
+</Window>
