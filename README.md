@@ -32,7 +32,8 @@ This WPF application allows users to input a comma-delimited list of integers an
    - **Find Largest**: Displays the largest number in the list.
    - **Find Odd Positioned Sum**: Displays the sum of numbers at odd positions.
    - **Find Even Positioned Sum**: Displays the sum of numbers at even positions.
-3. Results that are ***<font color="green">above zero will have green text</font>*** and ***<font color="red">below zero will have red text.</font>***
+3. **<p style="color:green">Results that are greater than zero will have green text</p>**
+4. **<p style="color:red">Results that are less than zero will have green text</p>** 
 
 ## Input Validation
 - Accepts: `3,-1,7,8,-5`
